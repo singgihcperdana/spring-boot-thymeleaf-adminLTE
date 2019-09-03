@@ -5,16 +5,16 @@
 ![](https://img.shields.io/badge/Bootstrap-AdminLTE-blue)
 ![](https://img.shields.io/badge/thymeleaf-v3.0.11.RELEASE-orange)
 
-# 项目结构
+# templates 目录结构
 ```
-├── UI          // 
-├── charts      // 
-├── forms       // 
-├── fragment    // 
-├── orders      // 
-├── single      // 
-├── tables      // 
-└── travelogue  // 
+├── UI
+├── charts
+├── forms
+├── fragment
+├── orders
+├── single
+├── tables
+└── travelogue
 ```
 - `UI`：UI组件
 - `charts`：图表
