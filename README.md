@@ -12,7 +12,7 @@
 ├── forms
 ├── fragment
 ├── orders
-├── single
+├── separate
 ├── tables
 └── travelogue
 ```
@@ -21,7 +21,7 @@
 - `forms`：表单
 - `fragment`：碎片，可以通过 thymeleaf 引入头部导航条，左侧导航条，页脚
 - `orders`：订单
-- `single`：或许你会用到
+- `separate`：内容部分抽离，或许你会用到
 - `tables`：表格
 - `travelogue`：游记
 
