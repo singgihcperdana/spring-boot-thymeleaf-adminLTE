@@ -294,7 +294,7 @@
 			}
 		},
 		_buildEvents: function(){
-			if (this.isInput){ // single input
+			if (this.isInput){ // separate input
 				this._events = [
 					[this.element, {
 						focus: $.proxy(this.show, this),

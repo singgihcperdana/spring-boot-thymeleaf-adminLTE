@@ -1266,7 +1266,7 @@
             // * alternate between selecting a start and end date for the range,
             // * if the time picker is enabled, apply the hour/minute/second from the select boxes to the clicked date
             // * if autoapply is enabled, and an end date was chosen, apply the selection
-            // * if single date picker mode, and time picker isn't enabled, apply the selection immediately
+            // * if separate date picker mode, and time picker isn't enabled, apply the selection immediately
             //
 
             if (this.endDate || date.isBefore(this.startDate, 'day')) {

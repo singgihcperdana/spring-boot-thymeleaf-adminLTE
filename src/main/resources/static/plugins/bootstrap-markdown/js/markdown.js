@@ -1256,7 +1256,7 @@ Markdown.dialects.Maruku.block.block_meta = function block_meta( block, next ) {
 };
 
 Markdown.dialects.Maruku.block.definition_list = function definition_list( block, next ) {
-  // one or more terms followed by one or more definitions, in a single block
+  // one or more terms followed by one or more definitions, in a separate block
   var tight = /^((?:[^\s:].*\n)+):\s+([\s\S]+)$/,
       list = [ "dl" ],
       i;
@@ -1581,7 +1581,7 @@ function convert_tree_to_html( tree, references, options ) {
 }
 
 
-// merges adjacent text nodes into a single node
+// merges adjacent text nodes into a separate node
 function merge_text_nodes( jsonml ) {
   // skip the tag name and attribute hash
   var i = extract_attr( jsonml ) ? 2 : 1;

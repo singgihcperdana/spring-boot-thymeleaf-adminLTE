@@ -189,7 +189,7 @@ AutoFill.prototype = {
 		this.s.filler.width = filler.width();
 		filler[0].style.display = "none";
 
-		/* Border display - one div for each side. We can't just use a single
+		/* Border display - one div for each side. We can't just use a separate
 		 * one with a border, as we want the events to effectively pass through
 		 * the transparent bit of the box
 		 */

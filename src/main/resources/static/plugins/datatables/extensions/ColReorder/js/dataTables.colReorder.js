@@ -1051,7 +1051,7 @@ ColReorder.prototype = {
 
 		// This is a slightly odd combination of jQuery and DOM, but it is the
 		// fastest and least resource intensive way I could think of cloning
-		// the tables with just a single header cell in it.
+		// the tables with just a separate header cell in it.
 		this.dom.drag = $(origTable.cloneNode(false))
 			.addClass( 'DTCR_clonedTable' )
 			.append(

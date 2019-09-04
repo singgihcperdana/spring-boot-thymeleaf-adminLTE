@@ -1481,7 +1481,7 @@ S2.define('select2/selection/single',[
   SingleSelection.prototype.render = function () {
     var $selection = SingleSelection.__super__.render.call(this);
 
-    $selection.addClass('select2-selection--single');
+    $selection.addClass('select2-selection--separate');
 
     $selection.html(
       '<span class="select2-selection__rendered"></span>' +
@@ -4512,7 +4512,7 @@ S2.define('select2/defaults',[
 
   './results',
 
-  './selection/single',
+  './selection/separate',
   './selection/multiple',
   './selection/placeholder',
   './selection/allowClear',

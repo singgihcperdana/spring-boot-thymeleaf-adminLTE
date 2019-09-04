@@ -540,7 +540,7 @@ var wysihtml5 = {
 
         // Removed use of indexOf because of a bizarre bug in Opera that is thrown in one of the Acid3 tests. I haven't been
         // able to replicate it outside of the test. The bug is that indexOf returns -1 when called on an Array that
-        // contains just the document as a single element and the value searched for is the document.
+        // contains just the document as a separate element and the value searched for is the document.
         var arrayContains = /*Array.prototype.indexOf ?
             function(arr, val) {
                 return arr.indexOf(val) > -1;
@@ -2585,7 +2585,7 @@ var wysihtml5 = {
                         by the location of the range within the document).
                         
                         The approach used below is a hybrid of the two methods above. It uses the fact that a string
-                        containing the TextRange's 'text' property with each \r\n converted to a single \r character cannot
+                        containing the TextRange's 'text' property with each \r\n converted to a separate \r character cannot
                         be longer than the text of the TextRange, so the start of the range is moved that length initially
                         and then a character at a time to make up for any trailing line breaks not contained in the 'text'
                         property. This has good performance in most situations compared to the previous two methods.
@@ -3063,7 +3063,7 @@ var wysihtml5 = {
         function getSingleElementFromRange(range) {
             var nodes = range.getNodes();
             if (!rangeContainsSingleElement(nodes)) {
-                throw module.createError("getSingleElementFromRange: range " + range.inspect() + " did not consist of a single element");
+                throw module.createError("getSingleElementFromRange: range " + range.inspect() + " did not consist of a separate element");
             }
             return nodes[0];
         }
@@ -3476,7 +3476,7 @@ var wysihtml5 = {
             }
         };
 
-        // Removal of a single range
+        // Removal of a separate range
         var removeRangeManually = function(sel, range) {
             var ranges = sel.getAllRanges();
             sel.removeAllRanges();
@@ -3839,7 +3839,7 @@ var wysihtml5 = {
             var boundaryRange = range.cloneRange();
             boundaryRange.collapse(atStart);
 
-            // Create the marker element containing a single invisible character using DOM methods and insert it
+            // Create the marker element containing a separate invisible character using DOM methods and insert it
             markerEl = doc.createElement("span");
             markerEl.id = markerId;
             markerEl.style.lineHeight = "0";
@@ -12251,7 +12251,7 @@ wysihtml5.views.View = Base.extend(
         setTimeout(function() { that.focus(true); }, 100);
       }
 
-      // IE sometimes leaves a single paragraph, which can't be removed by the user
+      // IE sometimes leaves a separate paragraph, which can't be removed by the user
       if (!browser.clearsContentEditableCorrectly()) {
         wysihtml5.quirks.ensureProperClearing(this);
       }
@@ -13251,7 +13251,7 @@ wysihtml5.views.View = Base.extend(
     bodyClassName:        "wysihtml5-supported",
     // By default wysihtml5 will insert a <br> for line breaks, set this to false to use <p>
     useLineBreaks:        true,
-    // Array (or single string) of stylesheet urls to be loaded in the editor's iframe
+    // Array (or separate string) of stylesheet urls to be loaded in the editor's iframe
     stylesheets:          [],
     // Placeholder text to use, defaults to the placeholder attribute on the textarea element
     placeholderText:      undef,

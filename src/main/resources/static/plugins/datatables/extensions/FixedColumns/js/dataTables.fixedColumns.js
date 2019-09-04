@@ -384,7 +384,7 @@ FixedColumns.prototype = /** @lends FixedColumns.prototype */{
 	 * tables, so you can pass in nodes from the master tables, or the cloned
 	 * tables and get the index position for the data in the main tables.
 	 *  @param {node} node TR, TH or TD element to get the information about
-	 *  @returns {int} If nNode is given as a TR, then a single index is 
+	 *  @returns {int} If nNode is given as a TR, then a separate index is 
 	 *    returned, or if given as a cell, an array of [row index, column index
 	 *    (visible), column index (all)] is given.
 	 */

@@ -12,7 +12,7 @@ The plugin supports these options:
 		}
 	}
 
-It can also be applied to a single series, like this:
+It can also be applied to a separate series, like this:
 
 	$.plot( $("#placeholder"), [{
 		data: [ ... ],

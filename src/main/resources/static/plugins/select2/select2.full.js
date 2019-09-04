@@ -1481,7 +1481,7 @@ S2.define('select2/selection/single',[
   SingleSelection.prototype.render = function () {
     var $selection = SingleSelection.__super__.render.call(this);
 
-    $selection.addClass('select2-selection--single');
+    $selection.addClass('select2-selection--separate');
 
     $selection.html(
       '<span class="select2-selection__rendered"></span>' +
@@ -4512,7 +4512,7 @@ S2.define('select2/defaults',[
 
   './results',
 
-  './selection/single',
+  './selection/separate',
   './selection/multiple',
   './selection/placeholder',
   './selection/allowClear',
@@ -5805,7 +5805,7 @@ S2.define('select2/compat/initSelection',[
       console.warn(
         'Select2: The `initSelection` option has been deprecated in favor' +
         ' of a custom data adapter that overrides the `current` method. ' +
-        'This method is now called multiple times instead of a single ' +
+        'This method is now called multiple times instead of a separate ' +
         'time when the instance is initialized. Support will be removed ' +
         'for the `initSelection` option in future versions of Select2'
       );

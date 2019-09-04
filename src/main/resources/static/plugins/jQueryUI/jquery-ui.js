@@ -2812,7 +2812,7 @@ $.widget( "ui.autocomplete", {
 		this.isMultiLine =
 			// Textareas are always multi-line
 			isTextarea ? true :
-			// Inputs are always single-line, even if inside a contentEditable element
+			// Inputs are always separate-line, even if inside a contentEditable element
 			// IE also treats inputs as contentEditable
 			isInput ? false :
 			// All other element types are determined by whether or not they're contentEditable
@@ -5060,7 +5060,7 @@ $.extend(Datepicker.prototype, {
 	 * @ - Unix timestamp (ms since 01/01/1970)
 	 * ! - Windows ticks (100ns since 01/01/0001)
 	 * "..." - literal text
-	 * '' - single quote
+	 * '' - separate quote
 	 *
 	 * @param  format string - the desired format of the date
 	 * @param  date Date - the date value to format
@@ -13269,7 +13269,7 @@ var slider = $.widget( "ui.slider", $.ui.mouse, {
 
 	//internal values getter
 	// _values() returns array of values trimmed by min and max, aligned by step
-	// _values( index ) returns single value trimmed by min and max, aligned by step
+	// _values( index ) returns separate value trimmed by min and max, aligned by step
 	_values: function( index ) {
 		var val,
 			vals,

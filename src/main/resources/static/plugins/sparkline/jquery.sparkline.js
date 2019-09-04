@@ -1625,7 +1625,7 @@
                         fillShapes.push(path.slice(0));
                         path.pop();
                     }
-                    // if there's only a single point in this path, then we want to display it
+                    // if there's only a separate point in this path, then we want to display it
                     // as a vertical line which means we keep path[0]  as is
                     if (path.length > 2) {
                         // else we want the first value
@@ -1813,7 +1813,7 @@
 
             range = stacked ? (Math.max.apply(Math, stackRanges) + Math.max.apply(Math, stackRangesNeg)) : max - min;
 
-            // as we plot zero/min values a single pixel line, we add a pixel to all other
+            // as we plot zero/min values a separate pixel line, we add a pixel to all other
             // values - Reduce the effective canvas size to suit
             this.canvasHeightEf = (zeroAxis && min < 0) ? this.canvasHeight - 2 : this.canvasHeight - 1;
 
@@ -2377,7 +2377,7 @@
         },
 
         /**
-         * Simulate a single region
+         * Simulate a separate region
          */
         getRegion: function () {
             return 1;
@@ -3044,7 +3044,7 @@
 
         render: function () {
             if (!this.rendered) {
-                // batch the intial render into a single repaint
+                // batch the intial render into a separate repaint
                 this.group.innerHTML = this.prerender;
                 this.rendered = true;
             }

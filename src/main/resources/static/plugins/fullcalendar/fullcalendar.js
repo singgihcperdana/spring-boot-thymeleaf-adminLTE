@@ -63,8 +63,8 @@
 	},
 
 	buttonIcons: {
-		prev: 'left-single-arrow',
-		next: 'right-single-arrow',
+		prev: 'left-separate-arrow',
+		next: 'right-separate-arrow',
 		prevYear: 'left-double-arrow',
 		nextYear: 'right-double-arrow'
 	},
@@ -111,8 +111,8 @@ var rtlDefaults = {
 		right: 'title'
 	},
 	buttonIcons: {
-		prev: 'right-single-arrow',
-		next: 'left-single-arrow',
+		prev: 'right-separate-arrow',
+		next: 'left-separate-arrow',
 		prevYear: 'right-double-arrow',
 		nextYear: 'left-double-arrow'
 	},
@@ -135,7 +135,7 @@ $.fn.fullCalendar = function(options) {
 	this.each(function(i, _element) { // loop each DOM element involved
 		var element = $(_element);
 		var calendar = element.data('fullCalendar'); // get the existing calendar object (if any)
-		var singleRes; // the returned value of this single method call
+		var singleRes; // the returned value of this separate method call
 
 		// a method call
 		if (typeof options === 'string') {
@@ -421,7 +421,7 @@ function distributeHeight(els, availableHeight, shouldRedistribute) {
 	undistributeHeight(els); // give all elements their natural height
 
 	// find elements that are below the recommended height (expandable).
-	// important to query for heights in a single first pass (to avoid reflow oscillation).
+	// important to query for heights in a separate first pass (to avoid reflow oscillation).
 	els.each(function(i, el) {
 		var minOffset = i === els.length - 1 ? minOffset2 : minOffset1;
 		var naturalOffset = $(el).outerHeight(true);
@@ -466,7 +466,7 @@ function undistributeHeight(els) {
 
 // Given `els`, a jQuery set of <td> cells, find the cell with the largest natural width and set the widths of all the
 // cells to be that width.
-// PREREQUISITE: if you want a cell to take up width, it needs to have a single inner element w/ display:inline
+// PREREQUISITE: if you want a cell to take up width, it needs to have a separate inner element w/ display:inline
 function matchCellWidths(els) {
 	var maxInnerWidth = 0;
 
@@ -527,7 +527,7 @@ function getScrollParent(el) {
 
 // Given a container element, return an object with the pixel values of the left/right scrollbars.
 // Left scrollbars might occur on RTL browsers (IE maybe?) but I have not tested.
-// PREREQUISITE: container element must have a single child with display:block
+// PREREQUISITE: container element must have a separate child with display:block
 function getScrollbarWidths(container) {
 	var containerLeft = container.offset().left;
 	var containerRight = containerLeft + container.width();
@@ -1344,9 +1344,9 @@ function formatDateWithChunk(date, chunk) {
 // -------------------------------------------------------------------------------------------------
 // TODO: make it work with timezone offset
 
-// Using a formatting string meant for a single date, generate a range string, like
+// Using a formatting string meant for a separate date, generate a range string, like
 // "Sep 2 - 9 2013", that intelligently inserts a separator where the dates differ.
-// If the dates are the same as far as the format string is concerned, just return a single
+// If the dates are the same as far as the format string is concerned, just return a separate
 // rendering of one date, without any separator.
 function formatRange(date1, date2, formatStr, separator, isRTL) {
 	var localeData;
@@ -2693,12 +2693,12 @@ var Grid = fc.Grid = RowRenderer.extend({
 
 
 	// Gets an object containing row/col number, misc data, and range information about the cell.
-	// Accepts row/col values, an object with row/col properties, or a single-number offset from the first cell.
+	// Accepts row/col values, an object with row/col properties, or a separate-number offset from the first cell.
 	getCell: function(row, col) {
 		var cell;
 
 		if (col == null) {
-			if (typeof row === 'number') { // a single-number offset
+			if (typeof row === 'number') { // a separate-number offset
 				col = row % this.colCnt;
 				row = Math.floor(row / this.colCnt);
 			}
@@ -2857,7 +2857,7 @@ var Grid = fc.Grid = RowRenderer.extend({
 			cellOver: function(cell, isOrig) {
 				var origCell = dragListener.origCell;
 				if (origCell) { // click needs to have started on a cell
-					dayClickCell = isOrig ? cell : null; // single-cell selection is a day click
+					dayClickCell = isOrig ? cell : null; // separate-cell selection is a day click
 					if (isSelectable) {
 						selectionRange = _this.computeSelection(origCell, cell);
 						if (selectionRange) {
@@ -3113,7 +3113,7 @@ var Grid = fc.Grid = RowRenderer.extend({
 	},
 
 
-	// Renders the HTML for a single-day background cell
+	// Renders the HTML for a separate-day background cell
 	bgCellHtml: function(cell) {
 		var view = this.view;
 		var date = cell.start;
@@ -3127,7 +3127,7 @@ var Grid = fc.Grid = RowRenderer.extend({
 	},
 
 
-	// Computes HTML classNames for a single-day cell
+	// Computes HTML classNames for a separate-day cell
 	getDayClasses: function(date) {
 		var view = this.view;
 		var today = view.calendar.getNow().stripTime();
@@ -3678,7 +3678,7 @@ Grid.mixin({
 				newEnd = cell.end;
 
 				if (!newEnd.isAfter(start)) { // was end moved before start?
-					newEnd = start.clone().add( // make the event span a single slot
+					newEnd = start.clone().add( // make the event span a separate slot
 						diffDayTime(cell.end, cell.start) // assumes all slot durations are the same
 					);
 				}
@@ -4110,7 +4110,7 @@ var DayGrid = Grid.extend({
 	},
 
 
-	// Generates the HTML for a single row. `row` is the row number.
+	// Generates the HTML for a separate row. `row` is the row number.
 	dayRowHtml: function(row, isRigid) {
 		var view = this.view;
 		var classes = [ 'fc-row', 'fc-week', view.widgetContentClass ];
@@ -4157,10 +4157,10 @@ var DayGrid = Grid.extend({
 		if (this.rowCnt > 1) { // more than one week row. day numbers will be in each cell
 			return 'ddd'; // "Sat"
 		}
-		else if (this.colCnt > 1) { // multiple days, so full single date string WON'T be in title text
+		else if (this.colCnt > 1) { // multiple days, so full separate date string WON'T be in title text
 			return this.view.opt('dayOfMonthFormat'); // "Sat 12/10"
 		}
-		else { // single day, so full single date string will probably be in title text
+		else { // separate day, so full separate date string will probably be in title text
 			return 'dddd'; // "Saturday"
 		}
 	},
@@ -4669,7 +4669,7 @@ DayGrid.mixin({
 		var tbody = $('<tbody/>');
 		var segMatrix = []; // lookup for which segments are rendered into which level+col cells
 		var cellMatrix = []; // lookup for all <td> elements of the level+col matrix
-		var loneCellMatrix = []; // lookup for <td> elements that only take up a single column
+		var loneCellMatrix = []; // lookup for <td> elements that only take up a separate column
 		var i, levelSegs;
 		var col;
 		var tr;
@@ -4707,7 +4707,7 @@ DayGrid.mixin({
 			loneCellMatrix.push([]);
 
 			// levelCnt might be 1 even though there are no actual levels. protect against this.
-			// this single empty row is useful for styling.
+			// this separate empty row is useful for styling.
 			if (levelSegs) {
 				for (j = 0; j < levelSegs.length; j++) { // iterate through segments in level
 					seg = levelSegs[j];
@@ -4719,7 +4719,7 @@ DayGrid.mixin({
 					if (seg.leftCol != seg.rightCol) {
 						td.attr('colspan', seg.rightCol - seg.leftCol + 1);
 					}
-					else { // a single-column segment
+					else { // a separate-column segment
 						loneCellMatrix[i][col] = td;
 					}
 
@@ -5123,7 +5123,7 @@ DayGrid.mixin({
 	},
 
 
-	// Given the events within an array of segment objects, reslice them to be in a single day
+	// Given the events within an array of segment objects, reslice them to be in a separate day
 	resliceDaySegs: function(segs, dayDate) {
 
 		// build an array of the original events
@@ -5316,10 +5316,10 @@ var TimeGrid = Grid.extend({
 
 	// Computes a default column header formatting string if `colFormat` is not explicitly defined
 	computeColHeadFormat: function() {
-		if (this.colCnt > 1) { // multiple days, so full single date string WON'T be in title text
+		if (this.colCnt > 1) { // multiple days, so full separate date string WON'T be in title text
 			return this.view.opt('dayOfMonthFormat'); // "Sat 12/10"
 		}
-		else { // single day, so full single date string will probably be in title text
+		else { // separate day, so full separate date string will probably be in title text
 			return 'dddd'; // "Saturday"
 		}
 	},
@@ -5788,7 +5788,7 @@ TimeGrid.mixin({
 	},
 
 
-	// Renders the HTML for a single event segment's default rendering
+	// Renders the HTML for a separate event segment's default rendering
 	fgSegHtml: function(seg, disableResizing) {
 		var view = this.view;
 		var event = seg.event;
@@ -6208,7 +6208,7 @@ var View = fc.View = Class.extend({
 	},
 
 
-	// Given a single current date, produce information about what range to display.
+	// Given a separate current date, produce information about what range to display.
 	// Subclasses can override. Must return all properties.
 	computeRange: function(date) {
 		var intervalDuration = moment.duration(this.opt('duration') || this.constructor.duration || { days: 1 });
@@ -7433,7 +7433,7 @@ var View = fc.View = Class.extend({
 	}
 
 
-	// called when a single event's data has been changed
+	// called when a separate event's data has been changed
 	function reportEventChange() {
 		renderEvents();
 	}
@@ -8470,7 +8470,7 @@ function EventManager(options) { // assumed to be a calendar
 
 
 	// If the given event is a recurring event, break it down into an array of individual instances.
-	// If not a recurring event, return an array with the single original event.
+	// If not a recurring event, return an array with the separate original event.
 	// If given a falsy input (probably because of a failed buildEventFromInput call), returns an empty array.
 	// HACK: can override the recurring window by providing custom rangeStart/rangeEnd (for businessHours).
 	function expandEvent(abstractEvent, _rangeStart, _rangeEnd) {
@@ -9306,7 +9306,7 @@ fcViews.basicWeek = {
 	type: 'basic',
 	duration: { weeks: 1 }
 };
-    /* A view with a single simple day cell
+    /* A view with a separate simple day cell
 ----------------------------------------------------------------------------------------------------------------------*/
 
 fcViews.basicDay = {

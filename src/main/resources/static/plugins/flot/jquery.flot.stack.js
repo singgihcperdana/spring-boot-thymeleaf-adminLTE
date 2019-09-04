@@ -18,7 +18,7 @@ stack, you can set the stack option like this:
 		stack: null/false, true, or a key (number/string)
 	}
 
-You can also specify it for a single series, like this:
+You can also specify it for a separate series, like this:
 
 	$.plot( $("#placeholder"), [{
 		data: [ ... ],

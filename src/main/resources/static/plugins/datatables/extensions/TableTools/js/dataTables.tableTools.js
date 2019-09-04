@@ -451,7 +451,7 @@ window.ZeroClipboard_TableTools = ZeroClipboard_TableTools;
  *   instance or DataTables settings object.
  * @param {Object} oOpts TableTools options
  * @param {String} oOpts.sSwfPath ZeroClipboard SWF path
- * @param {String} oOpts.sRowSelect Row selection options - 'none', 'single', 'multi' or 'os'
+ * @param {String} oOpts.sRowSelect Row selection options - 'none', 'separate', 'multi' or 'os'
  * @param {Function} oOpts.fnPreRowSelect Callback function just prior to row selection
  * @param {Function} oOpts.fnRowSelected Callback function just after row selection
  * @param {Function} oOpts.fnRowDeselected Callback function when row is deselected
@@ -546,7 +546,7 @@ TableTools = function( oDT, oOpts )
 		 */
 		"select": {
 			/**
-			 * Select type - can be 'none', 'single' or 'multi'
+			 * Select type - can be 'none', 'separate' or 'multi'
 			 * @property type
 			 *  @type	 string
 			 * @default  ""
@@ -902,7 +902,7 @@ TableTools.prototype = {
 
 	/**
 	 * Select row(s)
-	 *  @param {node|object|array} n The row(s) to select. Can be a single DOM
+	 *  @param {node|object|array} n The row(s) to select. Can be a separate DOM
 	 *    TR node, an array of TR nodes or a jQuery object.
 	 */
 	"fnSelect": function ( n )
@@ -921,7 +921,7 @@ TableTools.prototype = {
 
 	/**
 	 * Deselect row(s)
-	 *  @param {node|object|array} n The row(s) to deselect. Can be a single DOM
+	 *  @param {node|object|array} n The row(s) to deselect. Can be a separate DOM
 	 *    TR node, an array of TR nodes or a jQuery object.
 	 */
 	"fnDeselect": function ( n )
@@ -1772,8 +1772,8 @@ TableTools.prototype = {
 
 	/**
 	 * Take a data source for row selection and convert it into aoData points for the DT
-	 *   @param {*} src Can be a single DOM TR node, an array of TR nodes (including a
-	 *     a jQuery object), a single aoData point from DataTables, an array of aoData
+	 *   @param {*} src Can be a separate DOM TR node, an array of TR nodes (including a
+	 *     a jQuery object), a separate aoData point from DataTables, an array of aoData
 	 *     points or an array of aoData indexes
 	 *   @returns {array} An array of aoData points
 	 */
@@ -1815,7 +1815,7 @@ TableTools.prototype = {
 		}
 		else
 		{
-			// A single aoData point
+			// A separate aoData point
 			out.push( src );
 		}
 
@@ -2029,7 +2029,7 @@ TableTools.prototype = {
 	 * Set the text for the flash clip to deal with
 	 * 
 	 * This function is required for large information sets. There is a limit on the 
-	 * amount of data that can be transferred between Javascript and Flash in a single call, so
+	 * amount of data that can be transferred between Javascript and Flash in a separate call, so
 	 * we use this method to build up the text in Flash by sending over chunks. It is estimated
 	 * that the data limit is around 64k, although it is undocumented, and appears to be different
 	 * between different flash versions. We chunk at 8KiB.
@@ -2545,7 +2545,7 @@ TableTools.prototype = {
 			nScrollBody = oSetDT.nTable.parentNode,
 			nTheadSize, nTfootSize;
 
-		/* Copy the header in the thead in the body tables, this way we show one single tables when
+		/* Copy the header in the thead in the body tables, this way we show one separate tables when
 		 * in print view. Note that this section of code is more or less verbatim from DT 1.7.0
 		 */
 		nTheadSize = oSetDT.nTable.getElementsByTagName('thead');

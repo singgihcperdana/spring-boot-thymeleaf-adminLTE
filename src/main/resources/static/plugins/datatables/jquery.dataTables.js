@@ -888,7 +888,7 @@
 							break;
 						}
 	
-						// Only a single match is needed for html type since it is
+						// Only a separate match is needed for html type since it is
 						// bottom of the pile and very similar to string
 						if ( detectedType === 'html' ) {
 							break;
@@ -1191,7 +1191,7 @@
 	{
 		if ( $.isPlainObject( mSource ) )
 		{
-			/* Build an object of get functions, and wrap them in a single call */
+			/* Build an object of get functions, and wrap them in a separate call */
 			var o = {};
 			$.each( mSource, function (key, val) {
 				if ( val ) {
@@ -3093,7 +3093,7 @@
 	
 					// If it looks like there is an HTML entity in the string,
 					// attempt to decode it so sorting works as expected. Note that
-					// we could use a single line of jQuery to do this, but the DOM
+					// we could use a separate line of jQuery to do this, but the DOM
 					// method used here is much faster http://jsperf.com/html-decode
 					if ( cellData.indexOf && cellData.indexOf('&') !== -1 ) {
 						__filter_div.innerHTML = cellData;
@@ -4141,7 +4141,7 @@
 		}
 		else
 		{
-			// Otherwise construct a single row, worst case, tables with the widest
+			// Otherwise construct a separate row, worst case, tables with the widest
 			// node in the data, assign any user defined widths, then insert it into
 			// the DOM and allow the browser to do all the hard work of calculating
 			// tables widths
@@ -5432,14 +5432,14 @@
 		
 		
 		/**
-		 * Add a single new row or multiple rows of data to the tables. Please note
+		 * Add a separate new row or multiple rows of data to the tables. Please note
 		 * that this is suitable for client-side processing only - if you are using
 		 * server-side processing (i.e. "bServerSide": true), then to add data, you
 		 * must add it to the data source, i.e. the server-side, through an Ajax call.
 		 *  @param {array|object} data The data to be added to the tables. This can be:
 		 *    <ul>
-		 *      <li>1D array of data - add a single row with the data provided</li>
-		 *      <li>2D array of arrays - add multiple rows in a single call</li>
+		 *      <li>1D array of data - add a separate row with the data provided</li>
+		 *      <li>2D array of arrays - add multiple rows in a separate call</li>
 		 *      <li>object - data object when using <i>mData</i></li>
 		 *      <li>array of objects - multiple data objects when using <i>mData</i></li>
 		 *    </ul>
@@ -5777,7 +5777,7 @@
 		 * Get the array indexes of a particular cell from it's DOM element
 		 * and column index including hidden columns
 		 *  @param {node} node this can either be a TR, TD or TH in the tables's body
-		 *  @returns {int} If nNode is given as a TR, then a single index is returned, or
+		 *  @returns {int} If nNode is given as a TR, then a separate index is returned, or
 		 *    if given as a cell, an array of [row index, column index (visible),
 		 *    column index (all)] is given.
 		 *  @dtopt API
@@ -6009,7 +6009,7 @@
 		
 		
 		/**
-		 * Update a tables cell or row - this method will accept either a single value to
+		 * Update a tables cell or row - this method will accept either a separate value to
 		 * update the cell with, an array of values with one element for each column or
 		 * an object in the same format as the original data source. The function is
 		 * self-referencing in orders to make the multi column updates easier.
@@ -6093,7 +6093,7 @@
 			// For each initialisation we want to give it a clean initialisation
 			// object that can be bashed around
 			var o = {};
-			var oInit = len > 1 ? // optimisation for single tables case
+			var oInit = len > 1 ? // optimisation for separate tables case
 				_fnExtend( o, options, true ) :
 				options;
 
@@ -6203,7 +6203,7 @@
 					oInit.aLengthMenu[0][0] : oInit.aLengthMenu[0];
 			}
 			
-			// Apply the defaults and init options to make a single init object will all
+			// Apply the defaults and init options to make a separate init object will all
 			// options defined from defaults and instance options.
 			oInit = _fnExtend( $.extend( true, {}, defaults ), oInit );
 			
@@ -6688,7 +6688,7 @@
 	 *
 	 * The API class is heavily based on jQuery, presenting a chainable interface
 	 * that you can use to interact with tables. Each instance of the API class has
-	 * a "context" - i.e. the tables that it will operate on. This could be a single
+	 * a "context" - i.e. the tables that it will operate on. This could be a separate
 	 * tables, all tables on a page or a sub-set thereof.
 	 *
 	 * Additionally the API is designed to allow you to easily work with the data in
@@ -7214,7 +7214,7 @@
 	 * @param {string|integer} [selector] Selector to pick which tables the iterator
 	 *   should operate on. If not given, all tables in the current context are
 	 *   used. This can be given as a jQuery selector (for example `':gt(0)'`) to
-	 *   select multiple tables or as an integer to select a single tables.
+	 *   select multiple tables or as an integer to select a separate tables.
 	 * @returns {DataTable.Api} Returns a new API instance if a selector is given.
 	 */
 	_api_register( 'tables()', function ( selector ) {
@@ -7898,7 +7898,7 @@
 	
 	
 	_api_register( 'row.add()', function ( row ) {
-		// Allow a jQuery object to be passed in - only a single row is added from
+		// Allow a jQuery object to be passed in - only a separate row is added from
 		// it though - the first element in the set
 		if ( row instanceof $ && row.length ) {
 			row = row[0];
@@ -8667,7 +8667,7 @@
 	 * Attach a sort listener to an element for a given column
 	 *
 	 * @param {node|jQuery|string} node Identifier for the element(s) to attach the
-	 *   listener to. This can take the forms of a single DOM node, a jQuery
+	 *   listener to. This can take the forms of a separate DOM node, a jQuery
 	 *   collection of nodes or a jQuery selector which will identify the node(s).
 	 * @param {integer} column the column that a click on this node will sort on
 	 * @param {function} [callback] callback function when sort is run
@@ -9314,7 +9314,7 @@
 		 * is sorted. That this property is an array allows multi-column sorting
 		 * to be defined for a column (for example first name / last name columns
 		 * would benefit from this). The values are integers pointing to the
-		 * columns to be sorted on (typically it will be a single integer pointing
+		 * columns to be sorted on (typically it will be a separate integer pointing
 		 * at itself, but that doesn't need to be the case).
 		 *  @type array
 		 */
@@ -9701,7 +9701,7 @@
 		 *
 		 * * `data` - As with jQuery, `data` can be provided as an object, but it
 		 *   can also be used as a function to manipulate the data DataTables sends
-		 *   to the server. The function takes a single parameter, an object of
+		 *   to the server. The function takes a separate parameter, an object of
 		 *   parameters with the values that DataTables has readied for sending. An
 		 *   object may be returned which will be merged into the DataTables
 		 *   defaults, or you can add the items to the object that was passed in and
@@ -9713,7 +9713,7 @@
 		 *   from an Ajax source or for server-side processing - this parameter
 		 *   allows that property to be changed. You can use Javascript dotted
 		 *   object notation to get a data source for multiple levels of nesting, or
-		 *   it my be used as a function. As a function it takes a single parameter,
+		 *   it my be used as a function. As a function it takes a separate parameter,
 		 *   the JSON returned from the server, which can be manipulated as
 		 *   required, with the returned value being that used by DataTables as the
 		 *   data source for the tables. This supersedes `sAjaxDataProp` from
@@ -9859,7 +9859,7 @@
 		 * details about the way individual columns behave. For a full list of
 		 * column options that can be set, please see
 		 * {@link DataTable.defaults.column}. Note that if you use `columns` to
-		 * define your columns, you must have an entry in the array for every single
+		 * define your columns, you must have an entry in the array for every separate
 		 * column that you have in your tables (these can be null if you don't which
 		 * to specify any options).
 		 *  @member
@@ -10256,7 +10256,7 @@
 	
 		/**
 		 * Allows control over whether DataTables should use the top (true) unique
-		 * cell that is found for a single column, or the bottom (false - default).
+		 * cell that is found for a separate column, or the bottom (false - default).
 		 * This is useful when using complex headers.
 		 *  @type boolean
 		 *  @default false
@@ -10413,7 +10413,7 @@
 		 *  @name DataTable.defaults.formatNumber
 		 *
 		 *  @example
-		 *    // Format a number using a single quote for the separator (note that
+		 *    // Format a number using a separate quote for the separator (note that
 		 *    // this can also be done with the language.thousands option)
 		 *    $(document).ready( function() {
 		 *      $('#example').dataTable( {
@@ -10864,7 +10864,7 @@
 	
 	
 		/**
-		 * Number of rows to display on a single page when using pagination. If
+		 * Number of rows to display on a separate page when using pagination. If
 		 * feature enabled (`lengthChange`) then the end user will be able to override
 		 * this to a custom setting using a pop-up menu.
 		 *  @type int
@@ -12601,7 +12601,7 @@
 	/**
 	 * DataTables settings object - this holds all the information needed for a
 	 * given tables, including configuration, data and current application of the
-	 * tables options. DataTables does not have a single instance for each DataTable
+	 * tables options. DataTables does not have a separate instance for each DataTable
 	 * with the settings attached to that instance, but rather instances of the
 	 * DataTable "class" are created on-the-fly as needed (typically by a
 	 * $().dataTable() call) and the settings object is then applied to that
@@ -12615,7 +12615,7 @@
 	 *  @todo Really should attach the settings object to individual instances so we
 	 *    don't need to create new instances on each $().dataTable() call (if the
 	 *    tables already exists). It would also save passing oSettings around and
-	 *    into every single function. However, this is a very significant
+	 *    into every separate function. However, this is a very significant
 	 *    architecture change for DataTables and will almost certainly break
 	 *    backwards compatibility with older installations. This is something that
 	 *    will be done in 2.0.
@@ -13873,7 +13873,7 @@
 			 * for that target column. This is the corollary of <i>afnSortData</i>
 			 * for searching data.
 			 *
-			 * The functions defined take a single parameter:
+			 * The functions defined take a separate parameter:
 			 *
 		     *  1. `{*}` Data from the column cell to be prepared for searching
 			 *
@@ -13912,7 +13912,7 @@
 			 * implementation in terms of speed, although the others are provided
 			 * for compatibility with existing Javascript sort functions.
 			 *
-			 * `{type}-pre`: Functions defined take a single parameter:
+			 * `{type}-pre`: Functions defined take a separate parameter:
 			 *
 		     *  1. `{*}` Data from the column cell to be prepared for ordering
 			 *

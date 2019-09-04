@@ -132,19 +132,19 @@
                     </li>
 
                     <li id="charts-morris">
-                        <a href="all-charts-morris.html">
+                        <a th:href="@{/charts/morris}">
                             <i class="fa fa-circle-o"></i> Morris Charts
                         </a>
                     </li>
 
                     <li id="charts-flot">
-                        <a href="all-charts-flot.html">
+                        <a th:href="@{/charts/flot}">
                             <i class="fa fa-circle-o"></i> Flot Charts
                         </a>
                     </li>
 
                     <li id="charts-inline">
-                        <a href="all-charts-inline.html">
+                        <a th:href="@{/charts/inline}">
                             <i class="fa fa-circle-o"></i> Inline Charts
                         </a>
                     </li>
@@ -163,47 +163,46 @@
                 <ul class="treeview-menu">
 
                     <li id="elements-general">
-                        <a href="all-elements-general.html">
+                        <a th:href="@{/UI/general}">
                             <i class="fa fa-circle-o"></i> 标准 General
                         </a>
                     </li>
 
                     <li id="elements-icons">
-                        <a href="all-elements-icons.html">
+                        <a th:href="@{/UI/icons}">
                             <i class="fa fa-circle-o"></i> 图标 Icons
                         </a>
                     </li>
 
                     <li id="elements-buttons">
-                        <a href="all-elements-buttons.html">
+                        <a th:href="@{/UI/buttons}">
                             <i class="fa fa-circle-o"></i> 按钮 Buttons
                         </a>
                     </li>
 
                     <li id="elements-sliders">
-                        <a href="all-elements-sliders.html">
+                        <a th:href="@{/UI/sliders}">
                             <i class="fa fa-circle-o"></i> 滑块 Sliders
                         </a>
                     </li>
 
                     <li id="elements-timeline">
-                        <a href="all-elements-timeline.html">
+                        <a th:href="@{/UI/timeline}">
                             <i class="fa fa-circle-o"></i> 时间线 Timeline
                         </a>
                     </li>
 
                     <li id="elements-modals">
-                        <a href="all-elements-modals.html">
+                        <a th:href="@{/UI/modals}">
                             <i class="fa fa-circle-o"></i> 对话框样式 Modals
                         </a>
                     </li>
 
                     <li id="elements-widgets">
-                        <a href="all-elements-widgets.html">
+                        <a th:href="@{/UI/widgets}">
                             <i class="fa fa-circle-o"></i> 窗体小部件 widgets
                         </a>
                     </li>
-
                 </ul>
             </li>
 
@@ -218,19 +217,19 @@
                 <ul class="treeview-menu">
 
                     <li id="form-general">
-                        <a href="all-form-general.html">
+                        <a th:href="@{/forms/general}">
                             <i class="fa fa-circle-o"></i> 基础表单元素
                         </a>
                     </li>
 
                     <li id="form-advanced">
-                        <a href="all-form-advanced.html">
+                        <a th:href="@{/forms/advanced}">
                             <i class="fa fa-circle-o"></i> 高级表单元素
                         </a>
                     </li>
 
                     <li id="form-editors">
-                        <a href="all-form-editors.html">
+                        <a th:href="@{/forms/editors}">
                             <i class="fa fa-circle-o"></i> 编辑器
                         </a>
                     </li>
@@ -249,13 +248,13 @@
                 <ul class="treeview-menu">
 
                     <li id="tables-simple">
-                        <a href="all-tables-simple.html">
+                        <a th:href="@{/tables/simple}">
                             <i class="fa fa-circle-o"></i> 简单表格
                         </a>
                     </li>
 
                     <li id="tables-data">
-                        <a href="all-tables-data.html">
+                        <a th:href="@{/tables/data}">
                             <i class="fa fa-circle-o"></i> 数据表格
                         </a>
                     </li>
@@ -274,13 +273,19 @@
                 <ul class="treeview-menu">
 
                     <li id="order-manage">
-                        <a href="all-order-manage-list.html">
+                        <a th:href="@{/orders/manage-list}">
                             <i class="fa fa-circle-o"></i> 全部订单
                         </a>
                     </li>
 
+                    <li id="order-manage-edit">
+                        <a th:href="@{/orders/manage-edit}">
+                            <i class="fa fa-circle-o"></i> 编辑订单
+                        </a>
+                    </li>
+
                     <li id="order-cancel">
-                        <a href="all-order-cancel-list.html">
+                        <a th:href="@{/orders/cancel-list}">
                             <i class="fa fa-circle-o"></i> 退款
                         </a>
                     </li>
@@ -299,19 +304,19 @@
                 <ul class="treeview-menu">
 
                     <li id="travellog-manage">
-                        <a href="all-travellog-manage-list.html">
+                        <a th:href="@{/travelogue/manage-list}">
                             <i class="fa fa-circle-o"></i> 游记列表
                         </a>
                     </li>
 
                     <li id="travellog-review">
-                        <a href="all-travellog-review-list.html">
+                        <a th:href="@{/travelogue/review-list}">
                             <i class="fa fa-circle-o"></i> 游记点评
                         </a>
                     </li>
 
                     <li id="travellog-setting">
-                        <a href="all-travellog-setting-edit.html">
+                        <a th:href="@{/travelogue/setting-edit}">
                             <i class="fa fa-circle-o"></i> 游记设置
                         </a>
                     </li>
