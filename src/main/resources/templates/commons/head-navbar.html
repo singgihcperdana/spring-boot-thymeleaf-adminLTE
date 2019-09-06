@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 <!-- 顶部导航条 -->
-<header class="main-header" th:fragment="head-navbar">
-
+<header class="main-header">
     <!-- 左侧 logo -->
-    <a href="all-admin-index.html" class="logo">
+    <a data-th-href="@{/index}" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini" style="color: greenyellow;"><b>--></b></span>
         <!-- logo for regular state and mobile devices -->
@@ -40,7 +32,7 @@
                                     <!-- start message -->
                                     <a href="#">
                                         <div class="pull-left">
-                                            <img th:src="@{/static/img/user.jpg}" class="img-circle"
+                                            <img data-th-src="@{/static/img/user.jpg}" class="img-circle"
                                                  alt="User Image">
                                         </div>
                                         <h4>
@@ -54,7 +46,8 @@
                                 <li>
                                     <a href="#">
                                         <div class="pull-left">
-                                            <img th:src="@{/static/img/user.jpg}" class="img-circle" alt="User Image">
+                                            <img data-th-src="@{/static/img/user.jpg}" class="img-circle"
+                                                 alt="User Image">
                                         </div>
                                         <h4>
                                             团队消息
@@ -66,7 +59,8 @@
                                 <li>
                                     <a href="#">
                                         <div class="pull-left">
-                                            <img th:src="@{/static/img/user.jpg}" class="img-circle" alt="User Image">
+                                            <img data-th-src="@{/static/img/user.jpg}" class="img-circle"
+                                                 alt="User Image">
                                         </div>
                                         <h4>
                                             Developers
@@ -78,7 +72,8 @@
                                 <li>
                                     <a href="#">
                                         <div class="pull-left">
-                                            <img th:src="@{/static/img/user.jpg}" class="img-circle" alt="User Image">
+                                            <img data-th-src="@{/static/img/user.jpg}" class="img-circle"
+                                                 alt="User Image">
                                         </div>
                                         <h4>
                                             Sales Department
@@ -90,7 +85,8 @@
                                 <li>
                                     <a href="#">
                                         <div class="pull-left">
-                                            <img th:src="@{/static/img/user.jpg}" class="img-circle" alt="User Image">
+                                            <img data-th-src="@{/static/img/user.jpg}" class="img-circle"
+                                                 alt="User Image">
                                         </div>
                                         <h4>
                                             Reviewers
@@ -236,13 +232,13 @@
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img th:src="@{/static/img/user.jpg}" class="user-image" alt="User Image">
+                        <img data-th-src="@{/static/img/user.jpg}" class="user-image" alt="User Image">
                         <span class="hidden-xs">wksky</span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header">
-                            <img th:src="@{/static/img/user.jpg}" class="img-circle" alt="User Image">
+                            <img data-th-src="@{/static/img/user.jpg}" class="img-circle" alt="User Image">
 
                             <p>
                                 wksky - 数据管理员
@@ -279,6 +275,3 @@
         </div>
     </nav>
 </header>
-<!-- 顶部导航条 /-->
-</body>
-</html>

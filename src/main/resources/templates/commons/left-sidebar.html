@@ -1,25 +1,19 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>左侧导航</title>
-</head>
-<body>
 <!-- 左侧导航 -->
-<aside class="main-sidebar" th:fragment="left-sidebar">
+<aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
-        <!-- Sidebar user panel -->
+        <!-- 用户面板 -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img th:src="@{/static/img/user.jpg}" class="img-circle" alt="User Image">
+                <img data-th-src="@{/static/img/user.jpg}" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
                 <p>wksky</p>
                 <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
             </div>
         </div>
-        <!-- search forms -->
+
+        <!-- 搜索框 -->
         <form action="#" method="get" class="sidebar-form">
             <div class="input-group">
                 <input type="text" name="q" class="form-control" placeholder="搜索...">
@@ -29,19 +23,16 @@
           </span>
             </div>
         </form>
-        <!-- /.search forms -->
 
 
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             <li class="header">菜单</li>
 
-            <li id="admin-index"><a th:href="@{/index}"><i class="fa fa-dashboard"></i> <span>首页</span></a>
+            <li id="admin-index"><a data-th-href="@{/index}"><i class="fa fa-dashboard"></i> <span>首页</span></a>
             </li>
 
             <!-- 菜单 -->
-
-
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-folder"></i> <span>后台通用页面</span>
@@ -52,62 +43,62 @@
                 <ul class="treeview-menu">
 
                     <li id="admin-login">
-                        <a th:href="@{/login}">
+                        <a data-th-href="@{/login}">
                             <i class="fa fa-circle-o"></i> 登录
                         </a>
                     </li>
 
                     <li id="admin-register">
-                        <a th:href="@{/register}">
+                        <a data-th-href="@{/register}">
                             <i class="fa fa-circle-o"></i> 注册
                         </a>
                     </li>
 
                     <li id="admin-404">
-                        <a th:href="@{/404}">
+                        <a data-th-href="@{/404}">
                             <i class="fa fa-circle-o"></i> 404页
                         </a>
                     </li>
 
                     <li id="admin-500">
-                        <a th:href="@{/500}">
+                        <a data-th-href="@{/500}">
                             <i class="fa fa-circle-o"></i> 500页
                         </a>
                     </li>
 
                     <li id="admin-blank">
-                        <a th:href="@{/blank}">
+                        <a data-th-href="@{/blank}">
                             <i class="fa fa-circle-o"></i> 空白页
                         </a>
                     </li>
 
                     <li id="admin-dataform">
-                        <a th:href="@{/dataform}">
+                        <a data-th-href="@{/dataform}">
                             <i class="fa fa-circle-o"></i> 表单页
                         </a>
                     </li>
 
                     <li id="admin-datalist">
-                        <a th:href="@{/datalist}">
+                        <a data-th-href="@{/datalist}">
                             <i class="fa fa-circle-o"></i> 数据列表页
                         </a>
                     </li>
 
 
                     <li id="admin-profile">
-                        <a th:href="@{/profile}">
+                        <a data-th-href="@{/profile}">
                             <i class="fa fa-circle-o"></i> 个人中心
                         </a>
                     </li>
 
                     <li id="admin-invoice">
-                        <a th:href="@{/invoice}">
+                        <a data-th-href="@{/invoice}">
                             <i class="fa fa-circle-o"></i> 发票
                         </a>
                     </li>
 
                     <li id="admin-invoice-print">
-                        <a th:href="@{/invoice-print}">
+                        <a data-th-href="@{/invoice-print}">
                             <i class="fa fa-circle-o"></i> 发票打印
                         </a>
                     </li>
@@ -126,25 +117,25 @@
                 <ul class="treeview-menu">
 
                     <li id="charts-chartjs">
-                        <a th:href="@{/charts/chartjs}">
+                        <a data-th-href="@{/charts/chartjs}">
                             <i class="fa fa-circle-o"></i> ChartJS
                         </a>
                     </li>
 
                     <li id="charts-morris">
-                        <a th:href="@{/charts/morris}">
+                        <a data-th-href="@{/charts/morris}">
                             <i class="fa fa-circle-o"></i> Morris Charts
                         </a>
                     </li>
 
                     <li id="charts-flot">
-                        <a th:href="@{/charts/flot}">
+                        <a data-th-href="@{/charts/flot}">
                             <i class="fa fa-circle-o"></i> Flot Charts
                         </a>
                     </li>
 
                     <li id="charts-inline">
-                        <a th:href="@{/charts/inline}">
+                        <a data-th-href="@{/charts/inline}">
                             <i class="fa fa-circle-o"></i> Inline Charts
                         </a>
                     </li>
@@ -163,43 +154,43 @@
                 <ul class="treeview-menu">
 
                     <li id="elements-general">
-                        <a th:href="@{/UI/general}">
+                        <a data-th-href="@{/UI/general}">
                             <i class="fa fa-circle-o"></i> 标准 General
                         </a>
                     </li>
 
                     <li id="elements-icons">
-                        <a th:href="@{/UI/icons}">
+                        <a data-th-href="@{/UI/icons}">
                             <i class="fa fa-circle-o"></i> 图标 Icons
                         </a>
                     </li>
 
                     <li id="elements-buttons">
-                        <a th:href="@{/UI/buttons}">
+                        <a data-th-href="@{/UI/buttons}">
                             <i class="fa fa-circle-o"></i> 按钮 Buttons
                         </a>
                     </li>
 
                     <li id="elements-sliders">
-                        <a th:href="@{/UI/sliders}">
+                        <a data-th-href="@{/UI/sliders}">
                             <i class="fa fa-circle-o"></i> 滑块 Sliders
                         </a>
                     </li>
 
                     <li id="elements-timeline">
-                        <a th:href="@{/UI/timeline}">
+                        <a data-th-href="@{/UI/timeline}">
                             <i class="fa fa-circle-o"></i> 时间线 Timeline
                         </a>
                     </li>
 
                     <li id="elements-modals">
-                        <a th:href="@{/UI/modals}">
+                        <a data-th-href="@{/UI/modals}">
                             <i class="fa fa-circle-o"></i> 对话框样式 Modals
                         </a>
                     </li>
 
                     <li id="elements-widgets">
-                        <a th:href="@{/UI/widgets}">
+                        <a data-th-href="@{/UI/widgets}">
                             <i class="fa fa-circle-o"></i> 窗体小部件 widgets
                         </a>
                     </li>
@@ -217,19 +208,19 @@
                 <ul class="treeview-menu">
 
                     <li id="form-general">
-                        <a th:href="@{/forms/general}">
+                        <a data-th-href="@{/forms/general}">
                             <i class="fa fa-circle-o"></i> 基础表单元素
                         </a>
                     </li>
 
                     <li id="form-advanced">
-                        <a th:href="@{/forms/advanced}">
+                        <a data-th-href="@{/forms/advanced}">
                             <i class="fa fa-circle-o"></i> 高级表单元素
                         </a>
                     </li>
 
                     <li id="form-editors">
-                        <a th:href="@{/forms/editors}">
+                        <a data-th-href="@{/forms/editors}">
                             <i class="fa fa-circle-o"></i> 编辑器
                         </a>
                     </li>
@@ -248,13 +239,13 @@
                 <ul class="treeview-menu">
 
                     <li id="tables-simple">
-                        <a th:href="@{/tables/simple}">
+                        <a data-th-href="@{/tables/simple}">
                             <i class="fa fa-circle-o"></i> 简单表格
                         </a>
                     </li>
 
                     <li id="tables-data">
-                        <a th:href="@{/tables/data}">
+                        <a data-th-href="@{/tables/data}">
                             <i class="fa fa-circle-o"></i> 数据表格
                         </a>
                     </li>
@@ -273,19 +264,19 @@
                 <ul class="treeview-menu">
 
                     <li id="order-manage">
-                        <a th:href="@{/orders/manage-list}">
+                        <a data-th-href="@{/orders/manage-list}">
                             <i class="fa fa-circle-o"></i> 全部订单
                         </a>
                     </li>
 
                     <li id="order-manage-edit">
-                        <a th:href="@{/orders/manage-edit}">
+                        <a data-th-href="@{/orders/manage-edit}">
                             <i class="fa fa-circle-o"></i> 编辑订单
                         </a>
                     </li>
 
                     <li id="order-cancel">
-                        <a th:href="@{/orders/cancel-list}">
+                        <a data-th-href="@{/orders/cancel-list}">
                             <i class="fa fa-circle-o"></i> 退款
                         </a>
                     </li>
@@ -304,19 +295,19 @@
                 <ul class="treeview-menu">
 
                     <li id="travellog-manage">
-                        <a th:href="@{/travelogue/manage-list}">
+                        <a data-th-href="@{/travelogue/manage-list}">
                             <i class="fa fa-circle-o"></i> 游记列表
                         </a>
                     </li>
 
                     <li id="travellog-review">
-                        <a th:href="@{/travelogue/review-list}">
+                        <a data-th-href="@{/travelogue/review-list}">
                             <i class="fa fa-circle-o"></i> 游记点评
                         </a>
                     </li>
 
                     <li id="travellog-setting">
-                        <a th:href="@{/travelogue/setting-edit}">
+                        <a data-th-href="@{/travelogue/setting-edit}">
                             <i class="fa fa-circle-o"></i> 游记设置
                         </a>
                     </li>
@@ -335,7 +326,7 @@
                 <ul class="treeview-menu">
 
                     <li id="system-setting">
-                        <a th:href="@{/system-setting-edit}">
+                        <a data-th-href="@{/system-setting-edit}">
                             <i class="fa fa-circle-o"></i> 系统设置
                         </a>
                     </li>
@@ -343,19 +334,14 @@
                 </ul>
             </li>
 
-            <!-- 菜单 /-->
-
+            <!-- 文档 /-->
             <li id="admin-documentation">
-                <a th:href="documentation" target="_blank">
+                <a data-th-href="documentation" target="_blank">
                     <i class="fa fa-book"></i>
-                    <span>AdminLTE汉化文档</span>
+                    <span>AdminLTE 汉化文档</span>
                 </a>
             </li>
 
         </ul>
     </section>
-    <!-- /.sidebar -->
 </aside>
-<!-- 左侧导航 /-->
-</body>
-</html>
