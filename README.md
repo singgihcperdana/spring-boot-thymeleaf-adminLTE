@@ -10,18 +10,18 @@
 ├── UI
 ├── charts
 ├── forms
-├── fragment
+├── commons
 ├── orders
 ├── separate
 ├── tables
 └── travelogue
 ```
-- `UI`：UI组件
+- `UI`：UI 组件
 - `charts`：图表
 - `forms`：表单
-- `fragment`：碎片，可以通过 thymeleaf 引入头部导航条，左侧导航条，页脚
+- `commons`：公共碎片，通过 thymeleaf 标签引入头部导航条，左侧导航条，页脚，css 及 js 文件
 - `orders`：订单
-- `separate`：内容部分抽离，或许你会用到
+- `separate`：抽离部分内容，或许你会用到
 - `tables`：表格
 - `travelogue`：游记
 
